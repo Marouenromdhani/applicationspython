@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DocList</title>
+</head>
+<body>
+<h1>Doclist</h1>
+{%for collection in collections%}
+<h2> { collection_name.name } </h2>
+{% endfor %}
+
+
+
+<form method="POST" action="{% url 'add_collection' %}">
+{% csrf_token %}
+    <input type="text" name="collection-name">
+    <button type="submit">Ajouter</button>
+
+
+</form>
+</body>
+</html>
